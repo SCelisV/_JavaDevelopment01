@@ -1,0 +1,11 @@
+1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+
+     Este es un archivo que he creado para utilizar en la clase StringDesIdentar.java para remover espacios.
+     El cual contiene una sangria de 5 espacios al inicio de cada linea
+
+     tercer parrafo
+
+     cuarto parrafo
+
+
+     octavo parrafo

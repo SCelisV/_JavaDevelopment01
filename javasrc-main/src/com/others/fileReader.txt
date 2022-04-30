@@ -1,0 +1,18 @@
+1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+
+Este es un archivo que he creado para utilizar en la clase ChekSum.java 
+y realizar una suma de comprobación del fichero
+
+tercer parrafo
+
+cuarto parrafo
+
+Adicionalmente lo voy a utilizar en la clase StringIdentar.java
+para crear una sangria like identación.
+
+sexto parrafo
+
+También lo estoy utilizando para la clase StringDesIdentar.java
+para remover espacios.
+
+octavo parrafo
