@@ -1,7 +1,6 @@
 package testing;
 
-import java.time.DayOfWeek;
-/*
+/* java.time
  * La principal API para fechas, horas, instantes y duraciones. 
  * Se basan en el sistema de calendario ISO,
  * sigue las reglas del Gregorian
@@ -9,6 +8,7 @@ import java.time.DayOfWeek;
  * Para acceder a los campos a un nivel inferior --> package java.time.temporal.
  * opciones de personalización. --> package java.time.format 
  */
+import java.time.DayOfWeek;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -20,6 +20,7 @@ import java.time.Period;
 import java.time.Year;
 import java.time.YearMonth;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TimePackage_test {
 
@@ -98,7 +99,7 @@ public class TimePackage_test {
 	 * now() --> Obtains the current date-time from the system clock in the default time-zone.
 	 */
 
-	System.out.println("LocalDateTime. : " + LocalDateTime.now());	// LocalDataTime. : 2022-05-03T23:07:22.838
+	System.out.println("LocalDateTime. : " + LocalDateTime.now());	// LocalDateTime. : 2022-05-03T23:07:22.838
 
 	/*
 	 * ZonedDateTime
@@ -150,6 +151,7 @@ public class TimePackage_test {
 	 */
 	DayOfWeek viernes = DayOfWeek.FRIDAY;
 	System.out.println("viernes: " + viernes);		//	viernes: FRIDAY
+
 	/*
 	 * Gets the day-of-week int value.
 	 */
@@ -170,8 +172,35 @@ public class TimePackage_test {
 
 	System.out.println("DayOfWeek: " + DayOfWeek.of(3));	//	DayOfWeek: WEDNESDAY
 
+	System.out.println("LocalDateTime antes de formatear: " + LocalDateTime.now());	// LocalDateTime antes de formatear: 2022-05-04T12:29:56.268
+
+	/* DateTimeFormatter
+	 * Formateador para imprimir y analizar objetos de fecha-hora.
+	 * Esta clase proporciona el principal punto de entrada de la aplicación para la impresión y el análisis sintáctico y 
+	 * proporciona implementaciones comunes de DateTimeFormatter: 
+	 */
+	LocalDateTime myLDTObj = LocalDateTime.now();
+
+	/*
+	 * El método ofPattern() 
+	 * acepta todo tipo de valores, para mostrar en formato diferente
+	 */
+
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+	System.out.println("LocalDateTime después de formatear: " + myLDTObj.format(formatter));	// LocalDateTime después de formatear: 04-05-2022 12:29:56
+
+	DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	System.out.println("LocalDateTime después de formatear: " + myLDTObj.format(formatter2));	// LocalDateTime después de formatear: 2022-05-04
 	
-	
+	DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	System.out.println("LocalDateTime después de formatear: " + myLDTObj.format(formatter3));	// LocalDateTime después de formatear: 04/05/2022
+
+	DateTimeFormatter formatter4 = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+	System.out.println("LocalDateTime después de formatear: " + myLDTObj.format(formatter4));	// LocalDateTime después de formatear: 04-May-2022
+
+	DateTimeFormatter formatter5 = DateTimeFormatter.ofPattern("E, MMM dd yyyy");
+	System.out.println("LocalDateTime después de formatear: " + myLDTObj.format(formatter5));	// LocalDateTime después de formatear: Wed, May 04 2022
+
 	}
 
 }
